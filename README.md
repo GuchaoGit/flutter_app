@@ -15,3 +15,4 @@
 *mainAxisAlignment 主轴
 *crossAxis 交叉轴
 *SizeBox 固定尺寸的盒子
+*alignment 对其
