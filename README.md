@@ -12,4 +12,5 @@
 #布局
 *Row 横着排列
 *Column 竖着排列
-FlexBox
+*mainAxisAlignment 主轴
+*crossAxis 交叉轴
