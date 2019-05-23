@@ -10,3 +10,6 @@
 * BoxDecoration 装饰盒子(背景-color 边框-border 圆角-borderRadius 阴影-boxShadow 形状-shape 渐变-gradient 背景图像-image)
 
 #布局
+*Row 横着排列
+*Column 竖着排列
+FlexBox
