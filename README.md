@@ -14,3 +14,4 @@
 *Column 竖着排列
 *mainAxisAlignment 主轴
 *crossAxis 交叉轴
+*SizeBox 固定尺寸的盒子
