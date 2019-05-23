@@ -16,3 +16,4 @@
 *crossAxis 交叉轴
 *SizeBox 固定尺寸的盒子
 *alignment 对其
+*Stack 一摞小部件  Positioned 可指定位置小部件
