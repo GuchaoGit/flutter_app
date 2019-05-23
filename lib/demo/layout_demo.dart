@@ -7,12 +7,7 @@ class LayoutDemo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: Container(
-              color: Color.fromRGBO(3, 54, 255, 1.0),
-            ),
-          ),
+          ConstrainedBoxDemo(),
         ],
       ),
     );
@@ -39,7 +34,7 @@ class IconBadge extends StatelessWidget {
     );
   }
 }
-
+//一摞小部件
 class StackDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -124,6 +119,33 @@ class StackDemo extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+//宽高比
+class AspectRatioDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 16 / 9,
+      child: Container(
+        color: Color.fromRGBO(3, 54, 255, 1.0),
+      ),
+    );
+  }
+}
+//带限制的盒子
+class ConstrainedBoxDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: 200.0,
+        maxWidth: 200.0,
+      ),
+      child: Container(
+        color: Color.fromRGBO(3, 54, 255, 1.0),
+      ),
     );
   }
 }
