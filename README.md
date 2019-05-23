@@ -2,4 +2,9 @@
 * TabBar使用 （TabBar，TabBarView，TabController）
 * Drawer使用 （DrawerHeader，ListTile）
 * BottomNavigationBar使用 （BottomNavigationBarItem）
-end
+
+#基础部件
+* Text 文字与文字样式
+* RichText 行内多样式文字
+* Container 容器
+* BoxDecoration 装饰盒子(背景-color 边框-border 圆角-borderRadius 阴影-boxShadow 形状-shape 渐变-gradient 背景图像-image)
