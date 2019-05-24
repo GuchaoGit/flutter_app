@@ -8,28 +8,35 @@ class SliverDemo extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverListDemo(),
+          SliverAppBar(
+//            title: Text("四大名著"),
+//            pinned: true,//固定界面顶部
+            floating: true, //悬浮 移动就显示
+            expandedHeight: 178.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(
+                "Hello 四大名著",
+                style: TextStyle(
+                  fontSize: 15.0,
+                  letterSpacing: 3,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              background: Image.network(
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1558694031237&di=4561171afc0801cc5a662872fc246883&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161001%2Fa4cdbf15887a4742a30597121f8e128d_th.jpeg",
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          SliverSafeArea(
+            sliver: SliverPadding(
+              padding: EdgeInsets.all(8), //内边距
+              sliver: SliverListDemo(),
+            ),
+          ),
         ],
       ),
-    );
-  }
-}
-
-//SliverSafeArea 安全区域显示布局
-class SliverSafeAreaDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SliverSafeArea(sliver: SliverPaddingDemo());
-  }
-}
-
-//SliverPadding 设置内边距
-class SliverPaddingDemo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: EdgeInsets.all(8), //内边距
-      sliver: SliverGridDemo(), //Sliver小部件
     );
   }
 }
@@ -70,13 +77,11 @@ class SliverListDemo extends StatelessWidget {
           return Padding(
             padding: EdgeInsets.only(
               bottom: 32.0,
-              left: 8.0,
-              right: 8.0,
             ),
             child: Material(
               borderRadius: BorderRadius.circular(12.0), //有效  但对内部小部件无效
               shadowColor: Colors.yellow.withOpacity(0.6),
-              elevation: 14.0,
+              elevation: 12.0,
               child: Stack(
                 children: <Widget>[
                   AspectRatio(

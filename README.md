@@ -37,3 +37,4 @@
   * SliverPadding: 为SliverGrid添加内边距
   * SliverSafeArea: 让视图再安全域显示
 *SliverList 列表试图
+*SliverAppBar 应用工具栏，实现悬浮头，带渐进动画的可伸缩空间
