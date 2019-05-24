@@ -8,7 +8,7 @@ class ViewDemo extends StatelessWidget {
     return GridViewBuilderDemo();
   }
 }
-
+//GridView.builder 按需生成GridView
 class GridViewBuilderDemo extends StatelessWidget {
   Widget _gridItemBuilder(BuildContext context, int index) {
     return Container(
