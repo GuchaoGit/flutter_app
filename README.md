@@ -38,3 +38,5 @@
   * SliverSafeArea: 让视图再安全域显示
 *SliverList 列表试图
 *SliverAppBar 应用工具栏，实现悬浮头，带渐进动画的可伸缩空间
+#路由 （界面跳转）
+* Routes 页面 存放在 Stack(堆)中，push添加页面，pop关闭页面
