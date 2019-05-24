@@ -9,11 +9,13 @@ class SliverDemo extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            leading: Icon(null),
 //            title: Text("四大名著"),
 //            pinned: true,//固定界面顶部
             floating: true, //悬浮 移动就显示
             expandedHeight: 178.0,
             flexibleSpace: FlexibleSpaceBar(
+
               title: Text(
                 "Hello 四大名著",
                 style: TextStyle(

@@ -39,6 +39,7 @@ class Home extends StatelessWidget {
         child: Scaffold(
             appBar: AppBar(
               title: Text("hello"),
+              centerTitle: true,
               actions: <Widget>[
                 IconButton(
                     icon: Icon(Icons.search),
