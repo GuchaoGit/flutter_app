@@ -22,3 +22,10 @@
 
 #视图
 * PageView 页面视图
+
+  pageSnapping:回弹效果  
+  reverse：页面倒置  
+  scrollDirection：滑动方向  
+  onPageChanged：页面切换回调
+* PageController 调整页面显示
+* PageView.builder 按需生成页面
