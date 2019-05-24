@@ -8,14 +8,22 @@ class NavigatorDemo extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(onPressed: null, child: Text("Home")),
             FlatButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (BuildContext context) {
-                      return Page('About');
-                    }),
-                  );
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/home');
+                },
+                child: Text("Home")),
+            FlatButton(
+//                onPressed: () {
+//                  Navigator.of(context).push(
+//                    MaterialPageRoute(builder: (BuildContext context) {
+//                      return Page('About');
+//                    }),
+//                  );
+//                },
+                onPressed: () {
+                  Navigator.pushNamed(context, '/about');
                 },
                 child: Text("About")),
           ],

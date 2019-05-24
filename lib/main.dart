@@ -5,8 +5,8 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
+import 'demo/navigator_demo.dart';
 import 'demo/sliver_demo.dart';
-import 'pages/navigator_demo.dart';
 
 void main() => runApp(App());
 
@@ -15,7 +15,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: NavigatorDemo(),
+//      home: NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => NavigatorDemo(),
+        '/about': (context) => Page("About"),
+        '/home': (context) => Home(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -26,7 +32,6 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -62,7 +67,7 @@ class Home extends StatelessWidget {
                       icon: Icon(Icons.view_quilt),
                     ),
                   ]),
-          ),
+            ),
             body: TabBarView(children: <Widget>[
               ListViewDemo(),
               BasicDemo(),
@@ -71,7 +76,6 @@ class Home extends StatelessWidget {
               SliverDemo(),
             ]),
             drawer: DrawerDemo(),
-            bottomNavigationBar: BottomNavigationBarDemo()
-        ));
+            bottomNavigationBar: BottomNavigationBarDemo()));
   }
 }

@@ -40,3 +40,5 @@
 *SliverAppBar 应用工具栏，实现悬浮头，带渐进动画的可伸缩空间
 #路由 （界面跳转）
 * Routes 页面 存放在 Stack(堆)中，push添加页面，pop关闭页面
+* Navigator.pushNamed 带名字的路由
+* initialRoute  设置初始route == home 
