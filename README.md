@@ -32,4 +32,8 @@
 * GridView 网格视图 （GridView.count GridView.extent GridView.builder）
 
 #Sliver
-* 
+* CustomScrollView.slivers 属性可用小部件有：（SliverList , SliverFixedExtentList , SliverGrid , SliverPadding , SliverAppBar）
+* SliverGrid: 网格视图
+  * SliverPadding: 为SliverGrid添加内边距
+  * SliverSafeArea: 让视图再安全域显示
+*SliverList 列表试图
