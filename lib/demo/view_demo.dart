@@ -5,7 +5,86 @@ import '../model/post.dart';
 class ViewDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return PageViewBuilderDemo();
+    return GridViewBuilderDemo();
+  }
+}
+
+class GridViewBuilderDemo extends StatelessWidget {
+  Widget _gridItemBuilder(BuildContext context, int index) {
+    return Container(
+      child: Image.network(
+        posts[index].imageUrl,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.all(8.0),
+      itemCount: posts.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 8.0,
+        crossAxisSpacing: 8.0,
+      ),
+      itemBuilder: _gridItemBuilder,
+    );
+  }
+}
+
+//GridView.extent 创建网格视图
+class GridViewExtentDemo extends StatelessWidget {
+  List<Widget> _buildTile(int count) {
+    return List.generate(count, (int index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          "Item $index",
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.extent(
+      maxCrossAxisExtent: 150,
+      crossAxisSpacing: 16.0, //交叉轴间距
+      mainAxisSpacing: 16.0, //主轴间距
+//      scrollDirection: Axis.horizontal,//滚动方向
+      children: _buildTile(100),
+    );
+  }
+}
+
+//GridView.count 创建网格视图
+class GridViewCountDemo extends StatelessWidget {
+  List<Widget> _buildTile(int count) {
+    return List.generate(count, (int index) {
+      return Container(
+        color: Colors.grey[300],
+        alignment: Alignment(0.0, 0.0),
+        child: Text(
+          "Item $index",
+          style: TextStyle(fontSize: 18.0, color: Colors.grey),
+        ),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3, //交叉轴数量
+      crossAxisSpacing: 16.0, //交叉轴间距
+      mainAxisSpacing: 16.0, //主轴间距
+//      scrollDirection: Axis.horizontal,//滚动方向
+      children: _buildTile(100),
+    );
   }
 }
 
