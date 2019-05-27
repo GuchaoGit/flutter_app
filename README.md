@@ -19,6 +19,7 @@
 * Stack 一摞小部件  Positioned 可指定位置小部件
 * AspectRatio 宽高比盒子
 * ConstrainedBox 带限制的盒子
+* SingleChildScrollView 可滚动的ScrollView
 
 #视图
 * PageView 页面视图
@@ -42,3 +43,5 @@
 * Routes 页面 存放在 Stack(堆)中，push添加页面，pop关闭页面
 * Navigator.pushNamed 带名字的路由
 * initialRoute  设置初始route == home 
+* InkWell 添加溅墨动画效果 
+
