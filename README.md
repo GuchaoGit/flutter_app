@@ -52,3 +52,7 @@
 * Form 使用(TextFormField),保存与获取表单里的数据,验证表单里的值(validator),自动验证(autovalidate)
 * RaisedButton 提交按钮 
 * SnackBar 屏幕底部弹出提示栏
+
+#按钮
+* FloatingActionButton 漂浮动作按钮,改变形状、背景色  
+  FloatingActionButton.extended 添加带标签的悬浮按钮
