@@ -50,10 +50,11 @@
 * TextField 文本字段、样式、监听内容变化
   使用TextEditingController监听文本字段变化
 * Form 使用(TextFormField),保存与获取表单里的数据,验证表单里的值(validator),自动验证(autovalidate)
-* RaisedButton 提交按钮 
 * SnackBar 屏幕底部弹出提示栏
 
 #按钮
 * FloatingActionButton 漂浮动作按钮,改变形状、背景色  
   FloatingActionButton.extended 添加带标签的悬浮按钮
 * BottomAppBar 底部工具栏
+* FlatButton 文字按钮  FlatButton.icon 带图标的文字按钮
+* RaisedButton 按钮有背景颜色，阴影效果 (按钮主题：颜色和形状的修改)

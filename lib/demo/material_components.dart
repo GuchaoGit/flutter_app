@@ -13,12 +13,127 @@ class MaterialComponents extends StatelessWidget {
         children: <Widget>[
           ListItem(
               title: 'FloatingActionButton', page: FloatingActionButtonDemo()),
+          ListItem(title: 'ButtonDemo', page: ButtonDemo()),
         ],
       ),
     );
   }
 }
 
+//Button
+class ButtonDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Widget flatButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton(
+          child: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.grey, //溅墨动画颜色
+          textColor: Theme
+              .of(context)
+              .accentColor,
+        ),
+        FlatButton.icon(
+          icon: Icon(Icons.add),
+          label: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.grey,
+          //溅墨动画颜色
+          textColor: Theme
+              .of(context)
+              .accentColor,
+        ),
+      ],
+    );
+    final Widget raisedButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          //修改button样式
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              buttonColor: Colors.blue, //按钮的颜色
+              textTheme: ButtonTextTheme.primary,
+//              shape: BeveledRectangleBorder(//直角矩形
+//                borderRadius: BorderRadius.circular(5.0),
+//              )
+              shape: StadiumBorder(),
+            ),
+          ),
+          child: RaisedButton(
+            child: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey, //溅墨动画颜色
+            elevation: 12.0, //阴影效果
+//            textColor: Theme.of(context).accentColor,
+          ),
+        ),
+        SizedBox(
+          width: 16.0,
+        ),
+        RaisedButton.icon(
+          icon: Icon(Icons.add),
+          label: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.grey,
+          color: Colors.greenAccent,
+          //设置背景色
+          elevation: 12.0,
+          //阴影效果
+          //溅墨动画颜色
+          textColor: Theme
+              .of(context)
+              .accentColor,
+        ),
+      ],
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ButtonDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            flatButtonDemo,
+            raisedButtonDemo,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _WidgetDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('_WidgetDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//FloatingActionButton BottomAppBar
 class FloatingActionButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
