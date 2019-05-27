@@ -35,10 +35,8 @@ class _RegisterFormState extends State<RegisterForm> {
     if (registerFormKey.currentState.validate()) //执行验证
         {
       registerFormKey.currentState.save(); //执行TextFormField onSaved()
-      autoValidate = true;
       debugPrint("username = $username , password = $password");
-      Scaffold.of(context)
-          .showSnackBar(
+      Scaffold.of(context).showSnackBar(
           SnackBar(content: Text("Registering..."))); //SnackBar 底部提示栏
     } else {
       setState(() {
