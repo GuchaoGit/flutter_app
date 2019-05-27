@@ -13,7 +13,7 @@ class SliverDemo extends StatelessWidget {
 //            title: Text("四大名著"),
 //            pinned: true,//固定界面顶部
             floating: true, //悬浮 移动就显示
-            expandedHeight: 178.0,
+            expandedHeight: 178.0, //伸展高度
             flexibleSpace: FlexibleSpaceBar(
 
               title: Text(
