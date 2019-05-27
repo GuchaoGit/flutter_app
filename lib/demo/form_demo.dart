@@ -12,11 +12,93 @@ class FormDemo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextFieldDemo(),
-              TextField(),
+              RegisterForm(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+//Form 使用
+class RegisterForm extends StatefulWidget {
+  @override
+  _RegisterFormState createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<RegisterForm> {
+  final registerFormKey = GlobalKey<FormState>();
+  String username, password;
+  bool autoValidate = false; //自动验证-关闭
+  void submitRegisterForm() {
+    if (registerFormKey.currentState.validate()) //执行验证
+        {
+      registerFormKey.currentState.save(); //执行TextFormField onSaved()
+      autoValidate = true;
+      debugPrint("username = $username , password = $password");
+      Scaffold.of(context)
+          .showSnackBar(
+          SnackBar(content: Text("Registering..."))); //SnackBar 底部提示栏
+    } else {
+      setState(() {
+        autoValidate = true;
+      });
+    }
+  }
+
+  String validatorUsername(value) {
+    if (value.isEmpty) {
+      return 'Username is required.';
+    }
+    return null;
+  }
+
+  String validatorPassword(value) {
+    if (value.isEmpty) {
+      return 'Password is required.';
+    }
+    return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: registerFormKey,
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(labelText: 'Username', helperText: ''),
+            onSaved: (value) {
+              username = value;
+            },
+            validator: validatorUsername,
+            autovalidate: autoValidate,
+          ),
+          TextFormField(
+            obscureText: true,
+            decoration: InputDecoration(labelText: 'Password', helperText: ''),
+            onSaved: (value) {
+              password = value;
+            },
+            validator: validatorPassword,
+            autovalidate: autoValidate,
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              color: Theme
+                  .of(context)
+                  .accentColor,
+              child: Text("Register", style: TextStyle(color: Colors.white)),
+              elevation: 0.0, //去掉阴影
+              onPressed: submitRegisterForm,
+            ),
+          ),
+        ],
       ),
     );
   }

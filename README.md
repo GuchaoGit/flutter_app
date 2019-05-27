@@ -49,3 +49,6 @@
 * Theme 定制、使用、重置、覆盖主题
 * TextField 文本字段、样式、监听内容变化
   使用TextEditingController监听文本字段变化
+* Form 使用(TextFormField),保存与获取表单里的数据,验证表单里的值(validator),自动验证(autovalidate)
+* RaisedButton 提交按钮 
+* SnackBar 屏幕底部弹出提示栏
