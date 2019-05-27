@@ -47,3 +47,5 @@
 
 #表单 （form_demo.dart）
 * Theme 定制、使用、重置、覆盖主题
+* TextField 文本字段、样式、监听内容变化
+  使用TextEditingController监听文本字段变化
