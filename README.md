@@ -69,3 +69,11 @@
 * CheckboxListTile 带标签与图标的复选框
 * Radio 单选按钮
 * RadioListTile 带标签与图表的单选按钮
+* Switch 开关
+* SwitchListTile 带标签与图标的开关
+* Slider 滑动选择器
+* 显示格式化日期
+  * 插曲：安装第三方包（演示安装Intl包）
+  * showDatePicker:选择日期/获取选择的日期(async::import 'dart:async';)
+  * showTimePicker:选择时间
+* Future 异步程序
