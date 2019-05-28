@@ -89,7 +89,127 @@ class ButtonDemo extends StatelessWidget {
         ),
       ],
     );
+    final Widget outlineButtonDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          //修改button样式
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              buttonColor: Colors.blue, //按钮的颜色
+              textTheme: ButtonTextTheme.primary,
+//              shape: BeveledRectangleBorder(//直角矩形
+//                borderRadius: BorderRadius.circular(5.0),
+//              )
+              shape: StadiumBorder(),
+            ),
+          ),
+          child: OutlineButton(
+            child: Text('Button'),
+            onPressed: () {},
+            borderSide: BorderSide(
+              //描边效果
+              color: Colors.blue,
+            ),
+            splashColor: Colors.grey,
+            //溅墨动画颜色
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.blueGrey,
+          ),
+        ),
+        SizedBox(
+          width: 16.0,
+        ),
+        OutlineButton.icon(
+          icon: Icon(Icons.add),
+          label: Text('Button'),
+          onPressed: () {},
+          splashColor: Colors.grey,
+          color: Colors.greenAccent,
+          //溅墨动画颜色
+          textColor: Theme
+              .of(context)
+              .accentColor,
+        ),
+      ],
+    );
 
+    final fixedWithButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+          width: 160.0,
+          child: OutlineButton.icon(
+            icon: Icon(Icons.add),
+            label: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey,
+            color: Colors.greenAccent,
+            //溅墨动画颜色
+            textColor: Theme
+                .of(context)
+                .accentColor,
+          ),
+        ),
+      ],
+    );
+    final expandedWidthButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: OutlineButton.icon(
+            icon: Icon(Icons.add),
+            label: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey,
+            color: Colors.greenAccent,
+            //溅墨动画颜色
+            textColor: Theme
+                .of(context)
+                .accentColor,
+          ),
+        ),
+      ],
+    );
+
+    final buttonBarDemo = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              padding: EdgeInsets.symmetric(horizontal: 32.0),
+            ),
+          ),
+          child: ButtonBar(
+            children: <Widget>[
+              OutlineButton.icon(
+                icon: Icon(Icons.add),
+                label: Text('Button'),
+                onPressed: () {},
+                splashColor: Colors.grey,
+                color: Colors.greenAccent,
+                //溅墨动画颜色
+                textColor: Theme
+                    .of(context)
+                    .accentColor,
+              ),
+              OutlineButton.icon(
+                icon: Icon(Icons.add),
+                label: Text('Button'),
+                onPressed: () {},
+                splashColor: Colors.grey,
+                color: Colors.greenAccent,
+                //溅墨动画颜色
+                textColor: Theme
+                    .of(context)
+                    .accentColor,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -102,6 +222,10 @@ class ButtonDemo extends StatelessWidget {
           children: <Widget>[
             flatButtonDemo,
             raisedButtonDemo,
+            outlineButtonDemo,
+            fixedWithButton,
+            expandedWidthButton,
+            buttonBarDemo,
           ],
         ),
       ),

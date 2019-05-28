@@ -58,3 +58,7 @@
 * BottomAppBar 底部工具栏
 * FlatButton 文字按钮  FlatButton.icon 带图标的文字按钮
 * RaisedButton 按钮有背景颜色，阴影效果 (按钮主题：颜色和形状的修改)
+* OutlineButton 描边按钮
+* 按钮容器Container，改变按钮宽度
+* 按钮容器Expanded，占满可用空间
+* 按钮容器ButtonBar,一组带边距的横排显示按钮,通过Theme修改边距大小
