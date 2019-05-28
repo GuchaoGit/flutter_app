@@ -63,3 +63,9 @@
 * 按钮容器Expanded，占满可用空间
 * 按钮容器ButtonBar,一组带边距的横排显示按钮,通过Theme修改边距大小
 * PopupMenuButton 弹出式菜单按钮
+
+#输入
+* Checkbox 复选框
+* CheckboxListTile 带标签与图标的复选框
+* Radio 单选按钮
+* RadioListTile 带标签与图表的单选按钮
