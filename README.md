@@ -77,3 +77,15 @@
   * showDatePicker:选择日期/获取选择的日期(async::import 'dart:async';)
   * showTimePicker:选择时间
 * Future 异步程序
+# 对话框
+* SimpleDialog 显示对话框（showDialog）
+  * SimpleDialogOption 选项
+  * 获取与使用选项的值(异步获取)
+* AlertDialog 提示对话框
+  * 获取与使用动作的值
+* BottomSheet 底部滑动窗口 _bottomSheetScaffoldKey.currentState.showBottomSheet
+* ModalBottomSheet 对话框式底部滑动窗口 showModalBottomSheet
+  * 处理并使用数据
+* SnackBar 操作提示栏 Scaffold.of(context).showSnackBar
+* ExpansionPanel 收缩面板/面板的收起与展开 （需在ExpansionPanelList中使用）
+  * 插曲：List.map().toList 将一种List集合转为另一种数据格式的List集合 
