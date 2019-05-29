@@ -123,3 +123,5 @@
   * StatelessWidget 无变化状态的小部件(内部数据不可改变)
   * StatefulWidget 带变化状态的小部件
   * 由父类管理状态
+  * 从父类那里传递个回调
+    * 创建InheritedWidget 有效的传递数据给子部件
