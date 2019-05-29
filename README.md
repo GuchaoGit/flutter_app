@@ -118,3 +118,7 @@
   * onStepTapped    点击步骤标号回调
   * onStepContinue  下一步回调
   * onStepCancel    取消回调
+  
+# 状态管理
+  * StatelessWidget 无变化状态的小部件(内部数据不可改变)
+  * StatefulWidget 带变化状态的小部件
