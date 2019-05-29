@@ -111,3 +111,6 @@
   * 数据表格排序 DataColumn.onSort
   * 选择数据表行 DataRow.onSelectChanged selected
 * PaginatedDataTable 带分页的数据表格 (source 添加表格数据；排序 DataTableSource提供排序方法)
+* Card 卡片
+  * 插曲：ButtonTheme.bar + ButtonBar 添加操作按钮
+  * ClipRRect 给图像添加圆角效果

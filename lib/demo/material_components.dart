@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'alert_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
 import 'button_demo.dart';
+import 'card_demo.dart';
 import 'checkbox_demo.dart';
 import 'chip_demo.dart';
 import 'data_table_demo.dart';
@@ -29,6 +30,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'CardDemo', page: CardDemo()),
           ListItem(
               title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
           ListItem(title: 'DataTableDemo', page: DataTableDemo()),
