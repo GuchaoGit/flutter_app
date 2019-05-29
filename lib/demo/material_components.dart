@@ -17,6 +17,7 @@ import 'radio_demo.dart';
 import 'simple_dialog_demo.dart';
 import 'slider_demo.dart';
 import 'snack_bar_demo.dart';
+import 'stepper_demo.dart';
 import 'switch_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
@@ -30,6 +31,7 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'StepperDemo', page: StepperDemo()),
           ListItem(title: 'CardDemo', page: CardDemo()),
           ListItem(
               title: 'PaginatedDataTableDemo', page: PaginatedDataTableDemo()),
