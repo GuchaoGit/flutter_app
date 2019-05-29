@@ -89,3 +89,13 @@
 * SnackBar 操作提示栏 Scaffold.of(context).showSnackBar
 * ExpansionPanel 收缩面板/面板的收起与展开 （需在ExpansionPanelList中使用）
   * 插曲：List.map().toList 将一种List集合转为另一种数据格式的List集合 
+
+#mdc(Material Design Components)
+* Chip 小碎片
+  * backgroundColor 背景色
+  * avatar CircleAvatar 圆形头像
+  * onDeleted 带删除功能的小碎片
+  * 用列表生成带删除功能的小碎片
+* Wrap 换行显示小部件
+  * spacing 小部件间隔
+* Divider 分割线
