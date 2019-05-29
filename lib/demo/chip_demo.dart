@@ -40,6 +40,10 @@ class _ChipDemoState extends State<ChipDemo> {
               height: 2, //宽度
               indent: 4, //缩进
             ),
+            Container(
+              width: double.infinity,
+              child: Text('LeftTags:${_tags.toString()}'),
+            ),
             Wrap(
               spacing: 8.0,
               children: _tags.map((tag) {

@@ -105,4 +105,9 @@
   * 比Chip多onSelected 选择功能
 * ChoiceChip 选择碎片 （类似于单选按钮）
   * 比Chip多onSelected 选择功能
-* DataTable 数据表格
+* DataTable 数据表格 需放入ListView中使用
+  * DataColumn 列明
+  * DataRow - DataCell 每一行单元格内容
+  * 数据表格排序 DataColumn.onSort
+  * 选择数据表行 DataRow.onSelectChanged selected
+* PaginatedDataTable 带分页的数据表格 (source 添加表格数据；排序 DataTableSource提供排序方法)
