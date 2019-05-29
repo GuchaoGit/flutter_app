@@ -11,6 +11,9 @@ class _ChipDemoState extends State<ChipDemo> {
     'banana',
     'Lemon',
   ];
+  List<String> _selected = [];
+  String _action = 'Nothing';
+  String _choice = 'Lemon';
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +53,79 @@ class _ChipDemoState extends State<ChipDemo> {
                 );
               }).toList(),
             ),
+            Divider(
+              color: Colors.green,
+              height: 2, //宽度
+              indent: 4, //缩进
+            ),
+            Container(
+              width: double.infinity,
+              child: Text('ActionChip:$_action'),
+            ),
+            Wrap(
+              spacing: 8.0,
+              children: _tags.map((tag) {
+                return ActionChip(
+                  label: Text(tag),
+                  onPressed: () {
+                    setState(() {
+                      _action = tag;
+                    });
+                  },
+                );
+              }).toList(),
+            ),
+            Divider(
+              color: Colors.green,
+              height: 2, //宽度
+              indent: 4, //缩进
+            ),
+            Container(
+              width: double.infinity,
+              child: Text('FilterShip:${_selected.toString()}'),
+            ),
+            Wrap(
+              spacing: 8.0,
+              children: _tags.map((tag) {
+                return FilterChip(
+                  label: Text(tag),
+                  selected: _selected.contains(tag),
+                  onSelected: (value) {
+                    setState(() {
+                      if (!value) {
+                        _selected.remove(tag);
+                      } else {
+                        _selected.add(tag);
+                      }
+                    });
+                  },
+                );
+              }).toList(),
+            ),
+            Divider(
+              color: Colors.green,
+              height: 2, //宽度
+              indent: 4, //缩进
+            ),
+            Container(
+              width: double.infinity,
+              child: Text('ChoiceChip:$_choice'),
+            ),
+            Wrap(
+              spacing: 8.0,
+              children: _tags.map((tag) {
+                return ChoiceChip(
+                  label: Text(tag),
+                  selected: _choice == tag,
+                  selectedColor: Colors.black,
+                  onSelected: (value) {
+                    setState(() {
+                      _choice = tag;
+                    });
+                  },
+                );
+              }).toList(),
+            ),
           ],
         ),
       ),
@@ -62,6 +138,8 @@ class _ChipDemoState extends State<ChipDemo> {
               'banana',
               'Lemon',
             ];
+            _selected = [];
+            _choice = 'Lemon';
           });
         },
       ),

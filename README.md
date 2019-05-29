@@ -99,3 +99,10 @@
 * Wrap 换行显示小部件
   * spacing 小部件间隔
 * Divider 分割线
+* ActionChip 动作碎片
+  * 比Chip多onPressed 点击功能
+* FilterChip 过滤碎片
+  * 比Chip多onSelected 选择功能
+* ChoiceChip 选择碎片 （类似于单选按钮）
+  * 比Chip多onSelected 选择功能
+* DataTable 数据表格
