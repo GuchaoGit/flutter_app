@@ -122,3 +122,4 @@
 # 状态管理
   * StatelessWidget 无变化状态的小部件(内部数据不可改变)
   * StatefulWidget 带变化状态的小部件
+  * 由父类管理状态
