@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class StateManagementDemo extends StatefulWidget {
   @override
@@ -30,11 +31,16 @@ class _StateManagementDemoState extends State<StateManagementDemo> {
         ),
         body: Column(
           children: <Widget>[
+            Text('小部件树传递参数'),
             CounterWrapper(
               count: _count,
               increaseCount: _increaseCount,
             ),
+            SizedBox(height: 20,),
+            Text('使用InheritedWidget传递参数'),
             CounterDirectParent(),
+            SizedBox(height: 20,),
+            CounterForScopedModel(),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -107,3 +113,40 @@ class CounterProvider extends InheritedWidget {
   }
 
 }
+
+//ScopedModel传递数据
+class CounterForScopedModel extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ScopedModel(
+      model: CounterModel(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('ScopedModel传递数据'),
+          ScopedModelDescendant<CounterModel>(
+            builder: (context, _, model) =>
+                ActionChip(
+                  label: Text('${model.count}'),
+                  onPressed: () {
+                    model.increaseCounter();
+                  },
+                ),),
+        ],
+      ),
+    );
+  }
+}
+
+//ScopedModel 传递参数
+class CounterModel extends Model {
+  int _count = 0;
+
+  int get count => _count;
+
+  void increaseCounter() {
+    _count++;
+    notifyListeners();
+  }
+}
+
