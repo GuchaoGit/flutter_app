@@ -138,5 +138,14 @@
   * StreamBuilder 根据Stream上的数据构建小部件，可自动刷新小部件上数据
   
 # RxDart 第三方包 rxdart: ^0.22.0
+  * Rx          :Reactive Extensions 一套加工处理数据方法 （响应式编程用的）
+  * RxDart
+  * Observable  :类似dart语言下的Stream
+  * Observables 创建方法
+    * method1: Observable<String>(Stream )
+    * method2: Observable.fromFuture(Future)
+    * method3: Observable.fromIterable([])
+    * method4: Observable.periodic(Duration(seconds: 3),(x)=> x.toString()) 指定间隔时间重复执行
+  * Subjects 控制Observables (相当于StreamController)
   
   
