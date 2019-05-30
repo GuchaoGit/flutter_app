@@ -51,16 +51,22 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     super.initState();
     //创建stream
     debugPrint('Create a stream.');
-    Stream<String> _streamDemo = Stream.fromFuture(fetchData());
+//    Stream<String> _streamDemo = Stream.fromFuture(fetchData());
+    _streamController = StreamController<String>();
     //添加监听
     debugPrint('Start listening on the stream.');
+//    _subscription =
+//        _streamDemo.listen(onData, onError: onError, onDone: onDone);
     _subscription =
-        _streamDemo.listen(onData, onError: onError, onDone: onDone);
+        _streamController.stream.listen(
+            onData, onError: onError, onDone: onDone);
     debugPrint('Initialize completed.');
   }
 
-  _addDataToStream() {
+  _addDataToStream() async {
     debugPrint('Add data Stream');
+    String data = await fetchData();
+    _streamController.add(data);
   }
 
   _pauseStream() {
