@@ -15,13 +15,11 @@ class StreamDemo extends StatelessWidget {
 }
 
 class StreamDemoHome extends StatefulWidget {
-
   @override
   _StreamDemoHomeState createState() => _StreamDemoHomeState();
 }
 
 class _StreamDemoHomeState extends State<StreamDemoHome> {
-
   //实现暂停、恢复、取消监听
   StreamSubscription<String> _subscription;
 
@@ -29,6 +27,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   StreamController<String> _streamController;
 
   StreamSink _streamSink;
+  String _data = '...';
 
   Future<String> fetchData() async {
     await Future.delayed(Duration(seconds: 5));
@@ -37,7 +36,14 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   }
 
   void onData(String data) {
+    setState(() {
+      _data = data;
+    });
     debugPrint('$data');
+  }
+
+  void onDataTwo(String data) {
+    debugPrint('onDataTwo: $data');
   }
 
   void onError(error) {
@@ -54,15 +60,17 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     //创建stream
     debugPrint('Create a stream.');
 //    Stream<String> _streamDemo = Stream.fromFuture(fetchData());
-    _streamController = StreamController<String>();
+//    _streamController = StreamController<String>();
+    _streamController = StreamController.broadcast(); //可被多次订阅
     _streamSink = _streamController.sink;
     //添加监听
     debugPrint('Start listening on the stream.');
 //    _subscription =
 //        _streamDemo.listen(onData, onError: onError, onDone: onDone);
-    _subscription =
-        _streamController.stream.listen(
-            onData, onError: onError, onDone: onDone);
+    _subscription = _streamController.stream
+        .listen(onData, onError: onError, onDone: onDone); //订阅一
+    _streamController.stream
+        .listen(onDataTwo, onError: onError, onDone: onDone); //订阅二
     debugPrint('Initialize completed.');
   }
 
@@ -98,24 +106,30 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              child: Text('add'),
-              onPressed: _addDataToStream,
-            ),
-            FlatButton(
-              child: Text('pause'),
-              onPressed: _pauseStream,
-            ),
-            FlatButton(
-              child: Text('resume'),
-              onPressed: _resumeStream,
-            ),
-            FlatButton(
-              child: Text('cancel'),
-              onPressed: _cancelStream,
+            Text('$_data'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                  child: Text('add'),
+                  onPressed: _addDataToStream,
+                ),
+                FlatButton(
+                  child: Text('pause'),
+                  onPressed: _pauseStream,
+                ),
+                FlatButton(
+                  child: Text('resume'),
+                  onPressed: _resumeStream,
+                ),
+                FlatButton(
+                  child: Text('cancel'),
+                  onPressed: _cancelStream,
+                ),
+              ],
             ),
           ],
         ),

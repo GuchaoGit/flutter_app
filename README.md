@@ -134,3 +134,4 @@
   * StreamController 控制Stream
     * 使用StreamController.add 往Stream添加数据
     * 使用Sink往Stream添加数据 (StreamSink _streamSink = _streamController.sink;)
+  * BroadcastStream 可多次订阅 （通过StreamController创建 StreamController.broadcast()）
