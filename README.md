@@ -129,3 +129,5 @@
     
 # Stream 
   * Stream 创建与监听
+  * Stream.listen添加一个订阅（有数据，错误时，完成后）
+  * StreamSubscription 实现暂停、恢复、取消监听Stream
