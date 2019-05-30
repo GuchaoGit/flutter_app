@@ -150,5 +150,9 @@
     * PublishSubject()创建Subject  ：把数据发给已添加的监听
     * BehaviorSubject()创建Subject : 把最后一次添加的数据发给新加的监听；把数据发给已添加的监听
     * ReplaySubject()创建Subject : 把所有添加的数据，发给订阅者（可指定条数）
+  * RxDart数据处理
+    * RxDart 数据转化方法（map） subject.map() 
+    * RxDart 数据过滤（where） subject.where() 
+    * RxDart 数据延时通过（debounce） subject.debounce((_)=>TimerStream(true, Duration(milliseconds: 500)))//间隔时间（数据停止一段时间后再通过）
   
   

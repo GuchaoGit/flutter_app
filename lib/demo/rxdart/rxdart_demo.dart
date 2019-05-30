@@ -40,7 +40,14 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
   void initState() {
     super.initState();
     _subject = PublishSubject();
-    _subject.listen(onData);
+    _subject
+//        .map((value) => 'map:$value') //数据处理
+//        .where((value) {
+//      return value.length > 12;
+//    }) //数据过滤
+        .debounce((_) =>
+        TimerStream(true, Duration(milliseconds: 500))) //间隔时间（数据停止一段时间后再通过）
+        .listen(onData);
 //    Observable<String> _observable = Observable<String>(Stream.fromIterable(['hello','Guchao']));//method1
 //    Observable<String> _observable = Observable.fromFuture(fetchData());
 //    Observable<String> _observable = Observable.fromIterable(['hello','Guchao']);
