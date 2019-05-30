@@ -109,7 +109,14 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('$_data'),
+//            Text('$_data'),
+            StreamBuilder(
+              initialData: '...', //初始值
+              stream: _streamController.stream,
+              builder: (context, snapshot) {
+                return Text('${snapshot.data}');
+              },
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
