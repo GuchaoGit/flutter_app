@@ -156,5 +156,7 @@
     * RxDart 数据延时通过（debounce） subject.debounce((_)=>TimerStream(true, Duration(milliseconds: 500)))//间隔时间（数据停止一段时间后再通过）
     
 # BLoC 应用开发架构（业务逻辑组件）
+  * 全称： Business Logic Component
+  * BLoC应用案例 （计数器）
   
   
