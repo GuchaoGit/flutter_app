@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/state/state_management_demo.dart';
 
 import 'demo/basic_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/form_demo.dart';
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 //      home: NavigatorDemo(),
-      initialRoute: '/rxdart',
+      initialRoute: '/bloc',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page("About"),
@@ -31,6 +32,7 @@ class App extends StatelessWidget {
         '/state-manangement': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxDartDemo(),
+        '/bloc': (context) => BlocDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

@@ -154,5 +154,7 @@
     * RxDart 数据转化方法（map） subject.map() 
     * RxDart 数据过滤（where） subject.where() 
     * RxDart 数据延时通过（debounce） subject.debounce((_)=>TimerStream(true, Duration(milliseconds: 500)))//间隔时间（数据停止一段时间后再通过）
+    
+# BLoC 应用开发架构（业务逻辑组件）
   
   
