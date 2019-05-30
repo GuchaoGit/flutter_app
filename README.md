@@ -132,3 +132,5 @@
   * Stream.listen添加一个订阅（有数据，错误时，完成后）
   * StreamSubscription 实现暂停、恢复、取消监听Stream
   * StreamController 控制Stream
+    * 使用StreamController.add 往Stream添加数据
+    * 使用Sink往Stream添加数据 (StreamSink _streamSink = _streamController.sink;)

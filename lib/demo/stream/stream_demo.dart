@@ -28,6 +28,8 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   //控制Stream
   StreamController<String> _streamController;
 
+  StreamSink _streamSink;
+
   Future<String> fetchData() async {
     await Future.delayed(Duration(seconds: 5));
 //    throw('Something happened');
@@ -53,6 +55,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     debugPrint('Create a stream.');
 //    Stream<String> _streamDemo = Stream.fromFuture(fetchData());
     _streamController = StreamController<String>();
+    _streamSink = _streamController.sink;
     //添加监听
     debugPrint('Start listening on the stream.');
 //    _subscription =
@@ -66,7 +69,8 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   _addDataToStream() async {
     debugPrint('Add data Stream');
     String data = await fetchData();
-    _streamController.add(data);
+//    _streamController.add(data);//method 1
+    _streamSink.add(data); //method 2 使用Sink往Stream添加数据
   }
 
   _pauseStream() {
