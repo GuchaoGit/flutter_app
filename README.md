@@ -147,5 +147,8 @@
     * method3: Observable.fromIterable([])
     * method4: Observable.periodic(Duration(seconds: 3),(x)=> x.toString()) 指定间隔时间重复执行
   * Subjects 控制Observables (相当于StreamController)
+    * PublishSubject()创建Subject  ：把数据发给已添加的监听
+    * BehaviorSubject()创建Subject : 把最后一次添加的数据发给新加的监听；把数据发给已添加的监听
+    * ReplaySubject()创建Subject : 把所有添加的数据，发给订阅者（可指定条数）
   
   
