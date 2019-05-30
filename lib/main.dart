@@ -9,6 +9,7 @@ import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/material_components.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/stream/stream_demo.dart';
 
@@ -20,7 +21,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 //      home: NavigatorDemo(),
-      initialRoute: '/stream',
+      initialRoute: '/rxdart',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page("About"),
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
         '/mdc': (context) => MaterialComponents(),
         '/state-manangement': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
+        '/rxdart': (context) => RxDartDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

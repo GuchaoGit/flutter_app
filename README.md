@@ -73,7 +73,7 @@
 * SwitchListTile 带标签与图标的开关
 * Slider 滑动选择器
 * 显示格式化日期
-  * 插曲：安装第三方包（演示安装Intl包）
+  * 插曲：安装第三方包（演示安装Intl包 intl: ^0.15.8）
   * showDatePicker:选择日期/获取选择的日期(async::import 'dart:async';)
   * showTimePicker:选择时间
 * Future 异步程序
@@ -125,7 +125,7 @@
   * 由父类管理状态
   * 从父类那里传递个回调
     * 创建InheritedWidget 有效的传递数据给子部件
-    * ScopedModel 传递参数 （第三方的工具）
+    * ScopedModel 传递参数 （第三方的包 scoped_model: ^1.0.1）
     
 # Stream 
   * Stream 创建与监听
@@ -136,4 +136,7 @@
     * 使用Sink往Stream添加数据 (StreamSink _streamSink = _streamController.sink;)
   * BroadcastStream 可多次订阅 （通过StreamController创建 StreamController.broadcast()）
   * StreamBuilder 根据Stream上的数据构建小部件，可自动刷新小部件上数据
+  
+# RxDart 第三方包 rxdart: ^0.22.0
+  
   
