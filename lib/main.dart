@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/state/state_management_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'demo/animation/animation_demo.dart';
 import 'demo/basic_demo.dart';
@@ -8,6 +9,7 @@ import 'demo/bottom_navigation_bar_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/http/http_demo.dart';
+import 'demo/i18n/i18n_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/material_components.dart';
@@ -22,9 +24,20 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      //i18n配置
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate, //Material 组件的本地化字符串
+        GlobalWidgetsLocalizations.delegate, //定义文字方向
+      ],
+      supportedLocales: [ //设置支持的语言
+        Locale('en', 'US'),
+        Locale('zh', 'CN'),
+      ],
+
       debugShowCheckedModeBanner: false,
 //      home: NavigatorDemo(),
-      initialRoute: '/animation',
+      initialRoute: '/i18n',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page("About"),
@@ -37,6 +50,7 @@ class App extends StatelessWidget {
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
+        '/i18n': (context) => I18nDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

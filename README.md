@@ -182,3 +182,6 @@
   * Tween 设置动画范围值（Tween 数字、ColorTween 颜色）
   * Curve 动画曲线
   * AnimatedWidget 小部件，动画值改变时会自动重建 
+  
+# 国际化
+  * 安装与配置Flutter应用的国际化   flutter_localizations: sdk: flutter
