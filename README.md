@@ -162,6 +162,11 @@
     * 使用Stream 建立数据传输通道
     
 # Http 网络请求 第三方包 http: ^0.12.0
-  * 
+  * 进行网络请求 final response = await http.get(url);
+    * response.statusCode 状态码
+    * response.body 返回数据
+  * JSON转换 import 'dart:convert';
+    * json.encode 将map数据转为json字符串
+    * json.decode 将json字符串转为map数据
   
   
