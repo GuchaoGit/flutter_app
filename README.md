@@ -168,5 +168,8 @@
   * JSON转换 import 'dart:convert';
     * json.encode 将map数据转为json字符串
     * json.decode 将json字符串转为map数据
+    * 使用model类转换数据:fromJson
+    * 使用model类转换数据:toJson
+  * FutureBuilder 构建小部件 实现异步加载数据
   
   
