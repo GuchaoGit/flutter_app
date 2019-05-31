@@ -173,6 +173,10 @@
   * FutureBuilder 构建小部件 实现异步加载数据
   
 # 动画
-
+  * AnimationController 动画控制器
+    * duration 设置动画时长
+    * vsync：this 必须设置class ** with TickerProviderStateMixin
+    * animationController.addListener 添加监听
+    * animationController.forward() 播放动画
   
   
