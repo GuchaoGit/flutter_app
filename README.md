@@ -158,5 +158,8 @@
 # BLoC 应用开发架构（业务逻辑组件）
   * 全称： Business Logic Component
   * BLoC应用案例 （计数器）
+    * 使用InheritedWidget传递参数
+    * 使用Stream 建立数据传输通道
+    
   
   
