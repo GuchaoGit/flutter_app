@@ -178,5 +178,6 @@
     * vsync：this 必须设置class ** with TickerProviderStateMixin
     * animationController.addListener 添加监听
     * animationController.forward() 播放动画
+  * 动画的状态与运行
   
   
