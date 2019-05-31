@@ -24,13 +24,19 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      //设置地区和语言 不设置则跟随系统
+//      locale: Locale('en', 'US'),
+//      localeResolutionCallback:
+//          (Locale local, Iterable<Locale> supportedLocales) {
+//        return Locale('en', 'US');
+//      },
       //i18n配置
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate, //Material 组件的本地化字符串
         GlobalWidgetsLocalizations.delegate, //定义文字方向
       ],
-      supportedLocales: [ //设置支持的语言
+      supportedLocales: [
+        //设置支持的语言
         Locale('en', 'US'),
         Locale('zh', 'CN'),
       ],

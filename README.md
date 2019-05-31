@@ -185,3 +185,4 @@
   
 # 国际化
   * 安装与配置Flutter应用的国际化   flutter_localizations: sdk: flutter
+  * 获取与设置语言和地区
