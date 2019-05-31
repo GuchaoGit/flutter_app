@@ -186,4 +186,12 @@
 # 国际化
   * 安装与配置Flutter应用的国际化   flutter_localizations: sdk: flutter
   * 获取与设置语言和地区
-  * 定义与使用本地化资源
+  * 使用Map:定义与使用本地化资源
+  * intl :定义需要翻译的信息；
+    * 提取信息模板并翻译信息 intl_translation: ^0.17.5  /dev_dependencies: 
+    * 生成arb文件 
+    flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/demo/i18n/intl/ lib/demo/i18n/intl/guc_localizations.dart
+    * 基于arb生成dart文件 (Windows系统下无法识别 * 号 )
+    flutter pub pub run intl_translation:generate_from_arb --generated-file-prefix=guc_demo_ --output-dir=lib/demo/i18n/intl/ --no-use-deferred-loading lib/demo/i18n/intl/guc_localizations.dart lib/demo/i18n/intl/intl_*.arb
+    flutter pub pub run intl_translation:generate_from_arb --generated-file-prefix=guc_demo_ --output-dir=lib/demo/i18n/intl/ --no-use-deferred-loading lib/demo/i18n/intl/guc_localizations.dart lib/demo/i18n/intl/intl_en.arb lib/demo/i18n/intl/intl_zh.arb lib/demo/i18n/intl/intl_messages.arb
+
