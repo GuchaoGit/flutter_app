@@ -181,4 +181,4 @@
   * 动画的状态与运行
   * Tween 设置动画范围值（Tween 数字、ColorTween 颜色）
   * Curve 动画曲线
-  * AnimatedWidget 小部件，动画值改变时会自动重建
+  * AnimatedWidget 小部件，动画值改变时会自动重建 

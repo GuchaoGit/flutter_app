@@ -41,11 +41,11 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
     animation = Tween(begin: 32.0, end: 100.0).animate(curvedAnimation);
     animationColor = ColorTween(begin: Colors.red, end: Colors.red[900])
         .animate(_animationController);
-    _animationController.addListener(() {
-      //添加监听
-//      print('${_animationController.value}');
-      setState(() {});
-    });
+//    _animationController.addListener(() {
+//      //添加监听
+////      print('${_animationController.value}');
+//      setState(() {});
+//    });
 
     _animationController.addStatusListener((status) {
       print(status);
@@ -62,22 +62,38 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: IconButton(
-          icon: Icon(
-            Icons.favorite,
-            color: animationColor.value,
-          ),
-//          iconSize: _animationController.value,
-          iconSize: animation.value,
-          onPressed: () {
-            switch (_animationController.status) {
-              case AnimationStatus.completed:
-                _animationController.reverse();
-                break;
-              default:
-                _animationController.forward();
-            }
-          }),
+      child: AnimatedHeart(
+        animations: [animation, animationColor],
+        controller: _animationController,
+      ),
     );
+  }
+}
+
+class AnimatedHeart extends AnimatedWidget {
+  final List animations;
+  final AnimationController controller;
+
+  AnimatedHeart({this.animations, this.controller})
+      :super(listenable: controller);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+        icon: Icon(
+          Icons.favorite,
+          color: animations[1].value,
+        ),
+//          iconSize: _animationController.value,
+        iconSize: animations[0].value,
+        onPressed: () {
+          switch (controller.status) {
+            case AnimationStatus.completed:
+              controller.reverse();
+              break;
+            default:
+              controller.forward();
+          }
+        });
   }
 }
