@@ -10,6 +10,7 @@ import 'demo/drawer_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/http/http_demo.dart';
 import 'demo/i18n/i18n_demo.dart';
+import 'demo/i18n/map/guc_localizations.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/material_components.dart';
@@ -32,6 +33,7 @@ class App extends StatelessWidget {
 //      },
       //i18n配置
       localizationsDelegates: [
+        GucLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate, //Material 组件的本地化字符串
         GlobalWidgetsLocalizations.delegate, //定义文字方向
       ],
