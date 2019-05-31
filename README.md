@@ -161,5 +161,7 @@
     * 使用InheritedWidget传递参数
     * 使用Stream 建立数据传输通道
     
+# Http 网络请求 第三方包 http: ^0.12.0
+  * 
   
   
