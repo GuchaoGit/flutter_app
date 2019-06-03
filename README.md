@@ -202,3 +202,6 @@
       * Finder 找到小部件
       * Matcher 验证小部件
       * 测试小部件点按行为
+  * IntegrationTesting 集成测试  
+     * 需要安装依赖 flutter_driver: sdk: flutter
+     * test: ^1.6.3  ：import 'package:test/test.dart';
