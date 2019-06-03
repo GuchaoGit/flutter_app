@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'map/guc_localizations.dart';
+import 'intl/guc_localizations.dart';
 class I18nDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,9 @@ class I18nDemo extends StatelessWidget {
             Text(GucLocalizations
                 .of(context)
                 .title),
+            Text(GucLocalizations
+                .of(context)
+                .greet('guc')),
           ],
         ),
       ),

@@ -10,7 +10,7 @@ import 'demo/drawer_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/http/http_demo.dart';
 import 'demo/i18n/i18n_demo.dart';
-import 'demo/i18n/map/guc_localizations.dart';
+import 'demo/i18n/intl/guc_localizations.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/material_components.dart';

@@ -194,4 +194,5 @@
     * 基于arb生成dart文件 (Windows系统下无法识别 * 号 )
     flutter pub pub run intl_translation:generate_from_arb --generated-file-prefix=guc_demo_ --output-dir=lib/demo/i18n/intl/ --no-use-deferred-loading lib/demo/i18n/intl/guc_localizations.dart lib/demo/i18n/intl/intl_*.arb
     flutter pub pub run intl_translation:generate_from_arb --generated-file-prefix=guc_demo_ --output-dir=lib/demo/i18n/intl/ --no-use-deferred-loading lib/demo/i18n/intl/guc_localizations.dart lib/demo/i18n/intl/intl_en.arb lib/demo/i18n/intl/intl_zh.arb lib/demo/i18n/intl/intl_messages.arb
+    * 加载与使用本地化信息
 
