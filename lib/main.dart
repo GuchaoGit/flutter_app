@@ -18,6 +18,7 @@ import 'demo/navigator_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/stream/stream_demo.dart';
+import 'demo/test/test_demo.dart';
 
 void main() => runApp(App());
 
@@ -45,7 +46,7 @@ class App extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 //      home: NavigatorDemo(),
-      initialRoute: '/i18n',
+      initialRoute: '/test',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page("About"),
@@ -59,6 +60,7 @@ class App extends StatelessWidget {
         '/http': (context) => HttpDemo(),
         '/animation': (context) => AnimationDemo(),
         '/i18n': (context) => I18nDemo(),
+        '/test': (context) => TestDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
