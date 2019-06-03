@@ -198,3 +198,7 @@
 
 # 测试
   * UnitTesting 单元测试 添加测试，并运行测试
+  * WidgetTesting 测试小部件 
+      * Finder 找到小部件
+      * Matcher 验证小部件
+      * 测试小部件点按行为
